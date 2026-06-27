@@ -6,13 +6,38 @@ import {
   FaGoogle,
   FaGithub,
 } from "react-icons/fa";
+import { UserAuth } from "../../context/AuthContext";
+import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = UserAuth();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+
+    if (!formData.email || !formData.password) {
+      alert("Please enter the fields");
+    }
+
+    const success = login(formData.email, formData.password);
+    if (success) {
+      navigate("/dashboard");
+    } else {
+      alert("Invalid login Credential");
+    }
   };
 
   return (
@@ -123,6 +148,9 @@ const Login = () => {
 
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="john@example.com"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
@@ -135,6 +163,9 @@ const Login = () => {
 
                   <input
                     type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
                     placeholder="Enter password"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
