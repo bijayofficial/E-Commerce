@@ -1,52 +1,23 @@
-import { useState } from "react";
+import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { UseAuth } from "../../context/AuthContext.jsx";
-import { FaCode, FaAward, FaProjectDiagram } from "react-icons/fa";
+
+import {
+  FaCode,
+  FaLaptopCode,
+  FaUserGraduate,
+  FaUser,
+  FaProjectDiagram,
+  FaAward,
+} from "react-icons/fa";
 
 const Register = () => {
   const navigate = useNavigate();
-  const { register } = UseAuth();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    role: "student",
-  });
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.password ||
-      !formData.confirmPassword
-    ) {
-      alert("Please fill all fields");
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
-
-    register({
-      name: formData.name,
-      email: formData.email,
-      password: formData.password,
-      role: formData.role,
-    });
-
     navigate("/login");
   };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-slate-950">
       {/* Background Effects */}
@@ -177,9 +148,6 @@ const Register = () => {
 
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     placeholder="Enter full name"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
@@ -192,9 +160,6 @@ const Register = () => {
 
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     placeholder="john@example.com"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
@@ -207,9 +172,6 @@ const Register = () => {
 
                   <input
                     type="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
                     placeholder="Create password"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
@@ -222,9 +184,6 @@ const Register = () => {
 
                   <input
                     type="password"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
                     placeholder="Confirm password"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
@@ -232,7 +191,7 @@ const Register = () => {
 
                 <button
                   type="submit"
-                  className="w-full rounded-2xl bg-linear-to-r from-blue-600 to-indigo-600 py-4 font-semibold text-white transition hover:scale-[1.02]"
+                  className="w-full rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 py-4 font-semibold text-white transition hover:scale-[1.02]"
                 >
                   Create Account
                 </button>

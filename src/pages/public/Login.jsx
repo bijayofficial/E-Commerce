@@ -6,39 +6,13 @@ import {
   FaGoogle,
   FaGithub,
 } from "react-icons/fa";
-import { UseAuth } from "../../context/AuthContext.jsx";
-import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login } = UseAuth();
-
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!formData.email || !formData.password) {
-      alert("please enter the fileds");
-    }
-
-    let success = login(formData.email, formData.password);
-
-    if (success) {
-      navigate("/dashboard");
-    } else {
-      alert("Invalid Email or Password");
-    }
+    navigate("/dashboard");
   };
 
   return (
@@ -149,10 +123,7 @@ const Login = () => {
 
                   <input
                     type="email"
-                    onChange={handleChange}
-                    value={formData.email}
-                    name="email"
-                    placeholder="john@ample.com"
+                    placeholder="john@example.com"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
                 </div>
@@ -164,9 +135,6 @@ const Login = () => {
 
                   <input
                     type="password"
-                    onChange={handleChange}
-                    value={formData.password}
-                    name="password"
                     placeholder="Enter password"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition focus:border-blue-500"
                   />
