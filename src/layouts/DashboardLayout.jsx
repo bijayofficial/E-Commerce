@@ -1,19 +1,34 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
 import Sidebar from "../components/layout/Sidebar";
-import { useEffect } from "react";
 
 const DashboardLayout = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return (
-    <div className="flex min-h-screen bg-slate-950">
-      <Sidebar />
+  const [open, setOpen] = useState(false);
 
-      <main className="flex-1 overflow-y-auto p-6 lg:p-8">
-        <Outlet />
-      </main>
+  return (
+    <div className="min-h-screen bg-slate-950">
+      {/* Sidebar */}
+      <Sidebar open={open} setOpen={setOpen} />
+
+      {/* Main Content */}
+      <div className="flex min-h-screen flex-col lg:ml-72">
+        {/* Mobile Header */}
+        <header className="sticky top-0 z-20 flex items-center justify-between border-b border-slate-800 bg-slate-950 p-4 md:hidden">
+          <button onClick={() => setOpen(true)} className="text-2xl text-white">
+            <FaBars />
+          </button>
+
+          <h2 className="text-lg font-bold text-white">
+            Yukti<span className="text-blue-500">Tech</span>
+          </h2>
+        </header>
+
+        {/* Page Content */}
+        <main className="flex-1 bg-slate-950 p-6">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 };
