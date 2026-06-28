@@ -1,18 +1,207 @@
-# React + Vite
+# 🚀 YuktiTech Learning Management System (LMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Link : https://edtechcmp.netlify.app/
 
-Currently, two official plugins are available:
+A modern **Learning Management System (LMS)** built with **React**, **Vite**, **React Router**, **Context API**, and **Tailwind CSS**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application provides a complete student and admin dashboard experience with authentication, course management, responsive layouts, and role-based routing.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## ✨ Features
 
-Note: This will impact Vite dev & build performances.
+### 🌐 Public Pages
 
-## Expanding the ESLint configuration
+* Home
+* About
+* Courses
+* Course Details
+* Login
+* Register
+* 404 Not Found
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👨‍🎓 Student Dashboard
+
+* Dashboard Overview
+* Profile Management
+* My Courses
+* Settings
+
+### 👨‍💼 Admin Dashboard
+
+* Admin Panel
+* User Statistics
+* Course Statistics
+* Recent Students
+* Recent Courses
+* Quick Actions
+
+---
+
+## 🔐 Authentication
+
+* Register
+* Login
+* Logout
+* Protected Routes
+* Role-Based Routes
+* Local Storage Authentication
+* Persistent Login State
+
+---
+
+## 📚 Course Management
+
+* Course Context API
+* Dynamic Course Listing
+* Course Details
+* Student Enrollments
+* My Courses Dashboard
+
+---
+
+## 👤 User Management
+
+* User Registration
+* User Authentication
+* Profile Information
+* Role Management (Student/Admin)
+
+---
+
+## 🎨 UI Features
+
+* Fully Responsive Design
+* Mobile Sidebar
+* Fixed Desktop Sidebar
+* Dark Theme
+* Modern Glassmorphism UI
+* Animated Components
+* Reusable Components
+
+---
+
+## 🛠️ Tech Stack
+
+* React 19
+* Vite
+* React Router DOM
+* Tailwind CSS
+* React Icons
+* Context API
+* Local Storage
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── assets/
+├── components/
+│   ├── common/
+│   ├── courses/
+│   ├── home/
+│   └── layout/
+│
+├── context/
+├── data/
+├── hooks/
+├── layouts/
+├── pages/
+│   ├── public/
+│   └── dashboard/
+│
+├── routes/
+├── utils/
+└── main.jsx
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/bijayofficial/E-Commerce.git
+```
+
+Navigate to the project:
+
+```bash
+cd E-Commerce
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📖 Learning Concepts Covered
+
+* React Components
+* Props
+* State Management
+* Hooks
+* Context API
+* React Router v7
+* Protected Routing
+* Role-Based Authentication
+* Local Storage
+* Responsive Design
+* Tailwind CSS
+* Component Reusability
+
+---
+
+## 🚧 Future Improvements
+
+* Backend Integration
+* JWT Authentication
+* MongoDB Database
+* REST APIs
+* Payment Gateway
+* Course Purchase System
+* Video Lectures
+* Assignments
+* Certificates
+* Admin Analytics
+* Search & Filters
+* Notifications
+
+---
+
+## 👨‍💻 Author
+
+**Bijay Ghosh**
+
+GitHub: https://github.com/bijayofficial
+
+---
+
+## 📄 License
+
+This project is developed for educational and learning purposes.
